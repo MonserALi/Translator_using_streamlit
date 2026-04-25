@@ -25,7 +25,7 @@ def generate_response(text,option):
         return "Sorry. Something went wrong, Check and try again.."
    
 
-def audio_trascription(txt,lan):
+def audio_transcription(txt,lan):
     speech = gTTS(txt,lang=lan)
     buffer = io.BytesIO()
     speech.write_to_fp(buffer)
