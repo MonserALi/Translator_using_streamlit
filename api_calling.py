@@ -3,7 +3,7 @@ import streamlit as st
 import os,io
 from dotenv import load_dotenv
 
-
+from gtts import gTTS
 
 load_dotenv()
 
@@ -24,3 +24,10 @@ def generate_response(text,option):
         print(e)
         return "Sorry. Something went wrong, Check and try again.."
    
+
+def audio_trascription(txt,lan):
+    speech = gTTS(txt,lang=lan)
+    buffer = io.BytesIO()
+    speech.write_to_fp(buffer)
+    buffer.seek(0)
+    return buffer
