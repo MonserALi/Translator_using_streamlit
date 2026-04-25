@@ -3,6 +3,7 @@ from google import genai
 import os
 from api_calling import generate_response
 
+clicked = False
 
 if clicked:
 
