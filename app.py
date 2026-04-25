@@ -1,17 +1,17 @@
 import streamlit as st
 from google import genai
 import os
-from api_calling import  ,audio_transcription
+from api_calling import  generate_response,audio_transcription
 
 
 response = ""
 
 st.header("Easy Translator",anchor=None)
-text = st.text_input("Enter Words/Sentences")
+text = st.text_input("",placeholder="Enter your words or sentences")
     
 
 selected = st.selectbox("Translate to ",
-        ('Bangla','English','Korean'),
+        ('Bangla','English','Korean','Hindi','Urdu'),
         index=2
 )
 clicked  = st.button("Translate",type='primary')
@@ -36,8 +36,8 @@ if clicked:
         with st.container(border=True):
             st.subheader("Audio",anchor=False)
             with st.spinner("AI is transcripting audio..."):
-                st.audio(audio_transcription(text_for_audio,selected))
+                st.audio(audio_transcription(response))
                 # st.audio(audio_trascription("The audio will be transcripted soon"))
 
            
-st.markdown("Created by Md Monser ")
+st.markdown("[More Apps ](https://github.com/monserali)!")

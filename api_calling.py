@@ -13,7 +13,7 @@ client = genai.Client(api_key=my_api_key)
 
 def generate_response(text,option):
     try:
-        prompt = f"Translate '{text}' to {option} give only the answer not much text"
+        prompt = f"Translate '{text}' to {option} don't write anythich else whatever the text is, only give the correct translation text nothing else"
         response = client.models.generate_content(
              model="gemini-3-flash-preview",
              contents=prompt
@@ -25,8 +25,8 @@ def generate_response(text,option):
         return "Sorry. Something went wrong, Check and try again.."
    
 
-def audio_transcription(txt,lan):
-    speech = gTTS(txt,lang=lan)
+def audio_transcription(txt):
+    speech = gTTS(txt)
     buffer = io.BytesIO()
     speech.write_to_fp(buffer)
     buffer.seek(0)
