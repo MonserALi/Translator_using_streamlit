@@ -28,7 +28,6 @@ if clicked:
     if text and selected:
         with st.container(border=True):
             with st.spinner("Translating..."):
-                st.title("Translated")
                 response = generate_response(text,selected)
                 st.markdown(response)
 
