@@ -33,7 +33,7 @@ if clicked:
                 st.markdown(response)
 
 
-      with st.container(border=True):
+        with st.container(border=True):
             st.subheader("Audio",anchor=False)
             with st.spinner("AI is transcripting audio..."):
                 st.audio(audio_transcription(text_for_audio,selected))
