@@ -4,6 +4,7 @@ import os
 from api_calling import generate_response
 
 
+response = ""
 
 st.header("Easy Translator",anchor=None)
 text = st.text_input("Enter Words/Sentences")
@@ -31,5 +32,12 @@ if clicked:
                 response = generate_response(text,selected)
                 st.markdown(response)
 
-                
+
+      with st.container(border=True):
+            st.subheader("Audio",anchor=False)
+            with st.spinner("AI is transcripting audio..."):
+                st.audio(audio_transcription(text_for_audio,selected))
+                # st.audio(audio_trascription("The audio will be transcripted soon"))
+
+           
 st.markdown("Created by Md Monser ")
