@@ -5,8 +5,8 @@ from api_calling import generate_response
 
 
 
-st.header("Controls ",anchor=None)
-text = st.text_input("Enter Sentence")
+st.header("Easy Translator",anchor=None)
+text = st.text_input("Enter Words/Sentences")
     
 
 selected = st.selectbox("Translate to ",
@@ -16,7 +16,6 @@ selected = st.selectbox("Translate to ",
 clicked  = st.button("Translate",type='primary')
 
 st.set_page_config(page_title="Translator", layout="wide")
-st.text("Enter your text and hit on the button to translate")
 st.divider()
 
 if clicked:
