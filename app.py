@@ -4,20 +4,6 @@ import os
 from api_calling import generate_response
 
 
-
-st.header("Easy Translator",anchor=None)
-text = st.text_input("Enter Words/Sentences")
-    
-
-selected = st.selectbox("Translate to ",
-        ('Bangla','English','Korean'),
-        index=2
-)
-clicked  = st.button("Translate",type='primary')
-
-st.set_page_config(page_title="Translator", layout="wide")
-st.divider()
-
 if clicked:
 
     if not text:
@@ -32,4 +18,20 @@ if clicked:
                 st.markdown(response)
 
                 
+
+
+
+st.header("Easy Translator",anchor=None)
+text = st.text_input("Enter Words/Sentences")
+    
+
+selected = st.selectbox("Translate to ",
+        ('Bangla','English','Korean'),
+        index=2
+)
+clicked  = st.button("Translate",type='primary')
+
+st.set_page_config(page_title="Translator", layout="wide")
+st.divider()
+
 
