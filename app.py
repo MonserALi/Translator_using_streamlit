@@ -4,18 +4,18 @@ import os
 from api_calling import generate_response
 
 
-with st.sidebar:
-    st.header("Controls ",anchor=None)
-    text = st.text_input("Enter Sentence")
+
+st.header("Controls ",anchor=None)
+text = st.text_input("Enter Sentence")
     
 
-    selected = st.selectbox("Translate to ",
+selected = st.selectbox("Translate to ",
         ('Bangla','English','Korean'),
-        index=None
-    )
-    clicked  = st.button("Translate",type='primary')
+        index=2
+)
+clicked  = st.button("Translate",type='primary')
 
-st.header("Your personal translator",anchor=False)
+st.set_page_config(page_title="Translator", layout="wide")
 st.text("Enter your text and hit on the button to translate")
 st.divider()
 
@@ -33,5 +33,4 @@ if clicked:
                 st.markdown(response)
 
                 
-
 
