@@ -1,7 +1,7 @@
 import streamlit as st
 from google import genai
 import os
-from api_calling import generate_response
+from api_calling import generate_response,audio_transcription
 
 
 response = ""
